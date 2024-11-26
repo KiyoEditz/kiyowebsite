@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>KiyoEditz</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Profile</a></li>
+                    <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                    <li><a href="talent.html" class="nav-link">Talent</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>   
+                </ul>
+            </nav>
+        </aside>
+        <script>
+            // Pilih elemen yang diperlukan
+            const sidebar = document.querySelector('.sidebar');
+            const toggleButton = document.getElementById('menu-toggle');
+        
+            // Tambahkan event listener ke tombol toggle
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('active'); // Tambahkan/hapus kelas 'active'
+            });
+        </script>
+        <main class="content">
+              <section class="hari">
+                <div class="hari-content">
+                <div class="streak-stats">
+                    <a href="https://github.com/KiyoEditz">
+                        <img src="https://github-readme-streak-stats.herokuapp.com/?user=KiyoEditz&theme=tokyonight&hide_border=false&properties=background&border=%239611C5FF" alt="Streak Stats">
+                    </a>
+                </div>
+        
+                <div class="github-stats">
+                    <a href="https://github.com/KiyoEditz">
+                    <img src="https://github-readme-stats.vercel.app/api?username=KiyoEditz&bg_color=100,800000,ffffff&title_color=fff&text_color=fff" alt="GitHub Stats">
+                </a>
+                </div>
+        
+                <div class="top-langs">
+                    <a href="https://github.com/KiyoEditz">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=KiyoEditz&show_icons=true&theme=radical" alt="Top Languages">
+                </a>
+                </div>
+        
+                <div class="profile-summary">
+                    <a href="https://github.com/KiyoEditz">
+                        <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=KiyoEditz&theme=monokai" alt="Profile Summary">
+                    </a>
+                </div>
+        
+                <div class="trophy">
+                    <a href="https://github.com/KiyoEditz">
+                        <img src="https://github-profile-trophy.vercel.app/?username=KiyoEditz&theme=radical&margin-w=20&no-bg=true&no-frame=false" alt="GitHub Trophy">
+                    </a>
+                </div>
+            </div>
+                </section>
+        </div>
+        <footer class="footer">
+            <ul>
+                <li><a href="https://www.instagram.com/kiyoeditz"><img src="instagram.png" alt="Instagram"><span>Instagram</span></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100077102250480&mibextid=ZbWKwL"><img src="facebook.png" alt="Facebook"><span>Facebook</span></a></li>
+                <li><a href="https://discord.com/users/813365850979041302"><img src="discord.png" alt="Discord"><span>Discord</span></a></li>
+                <li><a href="https://youtube.com/@kiyo_editz?si=ZFzdmehe8snTEIBn"><img src="youtube.png" alt="YouTube"><span>YouTube</span></a></li>
+            </ul>
+            <p>© 2025 KiyoTech.Corp. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

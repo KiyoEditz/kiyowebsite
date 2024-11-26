@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>KiyoEditz</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Profile</a></li>
+                    <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                    <li><a href="talent.html" class="nav-link">Talent</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>   
+                </ul>
+            </nav>
+        </aside>
+        <script>
+            // Pilih elemen yang diperlukan
+            const sidebar = document.querySelector('.sidebar');
+            const toggleButton = document.getElementById('menu-toggle');
+        
+            // Tambahkan event listener ke tombol toggle
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('active'); // Tambahkan/hapus kelas 'active'
+            });
+        </script>
+                
+        
+        <!-- Main Content -->
+        <main class="content">
+            <section class="here">
+                <div class="carousel">
+                    <button class="carousel-btn prev">‹</button>
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <img src="112567330_p0_master1200.jpg" alt="Foto 1" class="carousel-image">
+                            <img src="117817334_p0.png" alt="Foto 2" class="carousel-image">
+                            <img src="SaveTwitter.Net_GWdaryUbUAAmdAN.jpg" alt="Foto 3" class="carousel-image">
+                            <img src="1cf07134674f4f54c3883.jpg" alt="Foto 4" class="carousel-image">
+                        </div>
+                    </div>
+                    <button class="carousel-btn next">›</button>
+                </div>
+                <script> 
+                    const track = document.querySelector('.carousel-track');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+const images = Array.from(track.children);
+const imageWidth = images[0].getBoundingClientRect().width;
+
+let currentIndex = 0;
+
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < images.length - 1) {
+        currentIndex++;
+        track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+    }
+});
+                </script>
+            </section>
+            
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <ul>
+                <li><a href="https://www.instagram.com/kiyoeditz"><img src="instagram.png" alt="Instagram"><span>Instagram</span></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100077102250480&mibextid=ZbWKwL"><img src="facebook.png" alt="Facebook"><span>Facebook</span></a></li>
+                <li><a href="https://discord.com/users/813365850979041302"><img src="discord.png" alt="Discord"><span>Discord</span></a></li>
+                <li><a href="https://youtube.com/@kiyo_editz?si=ZFzdmehe8snTEIBn"><img src="youtube.png" alt="YouTube"><span>YouTube</span></a></li>
+            </ul>
+            <p>© 2025 KiyoTech.Corp. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,503 @@
+/* Reset dan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f9fc;
+    color: #333;
+}
+
+/* Kontainer Utama */
+.container {
+    display: grid;
+    grid-template-areas:
+        "sidebar content"
+        "sidebar footer";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    min-height: 100vh;
+}
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background: #1c64e3;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-link {
+    display: block;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #a3c4f3;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    border: 2px solid #a3c4f3;
+    background: rgba(163, 196, 243, 0.2);
+    border-radius: 10px;
+}
+
+.sidebar nav li {
+    margin: 20px 0;
+}
+
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.sidebar nav a:hover {
+    color: #a8d0ff;
+}
+
+/* Styling dasar sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar tersembunyi di sebelah kiri */
+    width: 250px;
+    height: 100%;
+    background-color: #1b253b; /* Warna latar belakang sidebar */
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Transisi saat sidebar muncul */
+    z-index: 1000;
+}
+
+/* Saat sidebar aktif (ditampilkan) */
+.sidebar.active {
+    left: 0;
+}
+
+/* Styling tombol menu */
+.menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: -40px; /* Tombol berada di luar sidebar */
+    width: 40px;
+    height: 40px;
+    background-color: #567bfb; /* Warna tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1); /* Efek zoom saat tombol di-hover */
+}
+
+/* Styling navigasi */
+.nav-link {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #dbe7f5;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff; /* Perubahan warna saat di-hover */
+}
+
+/* Content */
+.content {
+    grid-area: content;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #a8d0ff, #eff3fa);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero img {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    color: #1c64e3;
+}
+
+.hero-content h2 {
+    font-size: 1.5em;
+    color: #555;
+}
+
+.hero-content p  {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
+.action-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background: #457bff;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+    background: #154a9e;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background: rgba(23, 34, 56, 0.9);
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #a3c4f3;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer ul li img {
+    width: 40px;
+}
+
+.footer ul li img:hover {
+    filter: none;
+}
+
+.footer p {
+    font-size: 0.8rem;
+    color: #b3c4e3;
+}
+/* ketikan */
+#typing-text {
+    font-size: 1.2em;
+    margin: 15px 0;
+    line-height: 1.6;
+    color: #000000;
+    display: inline-block;
+    border-right: 2px solid #a3c4f3;
+    animation: blink-cursor 0.7s steps(2) infinite;
+}
+
+@keyframes blink-cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+.here {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #a8d0ff, #eff3fa);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.carousel-container {
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.here img {
+    width: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.trophy,
+.top-langs,
+.streak-stats,
+.github-stats,
+.profile-summary {
+    margin-bottom: 20px;
+    background: #2d2d2d;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hari {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2d2d2d, #eff3fa);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hari img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.hari-content h1 {
+    font-size: 2.5em;
+    color: #1c64e3;
+}
+
+.hari-content h2 {
+    font-size: 1.5em;
+    color: #555;
+}
+
+.hari-content p  {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+
+.hati {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #a8d0ff, #eff3fa);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hati img {
+    border-radius: 30%;
+    margin-bottom: 20px;
+    width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hati-content h1 {
+    font-size: 2.5em;
+    color: #1c64e3;
+}
+
+.hati-content h2 {
+    font-size: 1.9em;
+    color: #555;
+}
+
+.hati-content p  {
+    font-size: 1.2em;
+    margin: 15px 0;
+}
+.hati ul li a {
+    text-decoration: none;
+    color: #a3c4f3;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.hati ul li img {
+    width: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.hati ul li img:hover {
+    filter: none;
+}
+
+.hati p {
+    font-size: 0.8rem;
+    color: #b3c4e3;
+}
+
+.youtube {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background:linear-gradient(180deg, #ff0000, #cc0c0c);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.github {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background:linear-gradient(45deg, #4078c0, #6e5494, #bd2c00, #c9510c, #6cc644, #fafafa);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.instagram {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.bluesky {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(180deg,#1285fe 0,#0065cf);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.threads {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(180deg, #010409, #2c2f35);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.facebook {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background:linear-gradient(180deg, #2265f5, #0244d3);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.x {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background:linear-gradient(45deg, #2960f5, #00ACEE, #36D8FF);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.tiktok {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(180deg, #461010, #010409);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+.discord {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    background:linear-gradient(-120deg, #7289da, #99aab5, #2c2f33, #23272a);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}

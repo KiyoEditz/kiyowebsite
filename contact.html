@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>KiyoEditz</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="nav-link">Profile</a></li>
+                    <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                    <li><a href="talent.html" class="nav-link">Talent</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>   
+                </ul>
+            </nav>
+        </aside>
+        <script>
+            // Pilih elemen yang diperlukan
+            const sidebar = document.querySelector('.sidebar');
+            const toggleButton = document.getElementById('menu-toggle');
+        
+            // Tambahkan event listener ke tombol toggle
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('active'); // Tambahkan/hapus kelas 'active'
+            });
+        </script>
+        <main class="content">
+              <section class="hati">
+                  <img src="sosmed.jpg" alt="">
+              <div class="hati-content">
+                  <h1>CONTACT</h1><br></h2>HUBUNGI SAYA KALAU MAU BERTANYA</h2><br><br>
+                  <a href="https://www.instagram.com/kiyoeditz" class="instagram">Instagram</a>
+                  <a href="https://bsky.app/profile/kiyoeditz.bsky.social" class="bluesky">Bluesky</a>
+                  <a href="https://www.facebook.com/profile.php?id=100077102250480&mibextid=ZbWKwL" class="facebook">Facebook</a>
+                  <a href="https://www.threads.net/@kiyoeditz?hl=id" class="threads">Threads</a>
+                  <a href="https://x.com/Kiyo_Editz" class="x">X | Twiter</a>
+                  <a href="https://vt.tiktok.com/ZSjAC2k5x/" class="tiktok">Tiktok</a>
+                  <a href="https://youtube.com/@kiyo_editz?si=ZFzdmehe8snTEIBn" class="youtube">YouTube</a>
+                  <a href="https://github.com/KiyoEditz/" class="github">Github</a>
+                  <a href="https://discord.com/users/813365850979041302" class="discord">Discord</a>
+</div>
+                </section>
+        </div>
+        <footer class="footer">
+            <ul>
+                <li><a href="https://www.instagram.com/kiyoeditz"><img src="instagram.png" alt="Instagram"><span>Instagram</span></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100077102250480&mibextid=ZbWKwL"><img src="facebook.png" alt="Facebook"><span>Facebook</span></a></li>
+                <li><a href="https://discord.com/users/813365850979041302"><img src="discord.png" alt="Discord"><span>Discord</span></a></li>
+                <li><a href="https://youtube.com/@kiyo_editz?si=ZFzdmehe8snTEIBn"><img src="youtube.png" alt="YouTube"><span>YouTube</span></a></li>
+            </ul>
+            <p>© 2025 KiyoTech.Corp. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

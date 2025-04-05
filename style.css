@@ -501,3 +501,43 @@ nav ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: background 0.3s ease;
 }
+.chat-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+#chat-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#chat-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chat-form button:hover {
+    background-color: #0056b3;
+}
+
+#chat-output {
+    font-size: 14px;
+    line-height: 1.6;
+    max-height: 400px;
+    overflow-y: auto;
+}

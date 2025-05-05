@@ -10,14 +10,6 @@
 <body>
     <div class="background-blur" id="backgroundBlur"></div>
     
-    <!-- Welcome Panel -->
-    <div class="welcome-panel" id="welcomePanel">
-        <div class="welcome-content">
-            <h2>Welcome to Music Player</h2>
-            <p>Gunakan headphone untuk pengalaman terbaik</p>
-            <button id="startButton">Mulai Mendengarkan</button>
-        </div>
-    </div>
     <aside class="sidebar">
         <button class="menu-toggle" id="menu-toggle">☰</button>
         <nav>
@@ -40,6 +32,16 @@
             sidebar.classList.toggle('active'); // Tambahkan/hapus kelas 'active'
         });
     </script>
+    
+    <!-- Welcome Panel -->
+    <div class="welcome-panel" id="welcomePanel">
+        <div class="welcome-content">
+            <h2>Welcome to Music Player</h2>
+            <p>Gunakan headphone untuk pengalaman terbaik</p>
+            <button id="startButton">Mulai Mendengarkan</button>
+        </div>
+    </div>
+   
     <div class="player-container">
         <h1 id="playlistTitle" class="playlist-title">Playlist</h1>
         

@@ -178,6 +178,7 @@ body {
     border-radius: 5px;
     outline: none;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .progress-container input[type="range"]::-webkit-slider-thumb {
@@ -210,6 +211,7 @@ body {
     border-radius: 5px;
     outline: none;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .volume-container input[type="range"]::-webkit-slider-thumb {
@@ -263,8 +265,8 @@ body {
         gap: 10px;
         align-items: start;
         background: linear-gradient(135deg, rgba(59, 171, 254, 1) 0%, rgba(181, 178, 254, 1) 50%, rgba(246, 161, 251, 1) 100%);
-        backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
     }
     
     .album-art {

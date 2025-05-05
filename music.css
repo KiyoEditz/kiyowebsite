@@ -31,7 +31,6 @@ body {
     transform: scale(1.1);
 }
 
- /* Sidebar */
  .sidebar {
     grid-area: sidebar;
     background: #1c64e3;
@@ -81,33 +80,30 @@ nav ul {
     color: #a8d0ff;
 }
 
-/* Styling dasar sidebar */
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px; /* Sidebar tersembunyi di sebelah kiri */
+    left: -250px;
     width: 250px;
     height: 100%;
-    background-color: #1b253b; /* Warna latar belakang sidebar */
+    background-color: #1b253b;
     color: white;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease; /* Transisi saat sidebar muncul */
+    transition: left 0.3s ease;
     z-index: 1000;
 }
 
-/* Saat sidebar aktif (ditampilkan) */
 .sidebar.active {
     left: 0;
 }
 
-/* Styling tombol menu */
 .menu-toggle {
     position: absolute;
     top: 20px;
-    right: -40px; /* Tombol berada di luar sidebar */
+    right: -40px; 
     width: 40px;
     height: 40px;
-    background-color: #567bfb; /* Warna tombol */
+    background-color: #567bfb;
     color: white;
     border: none;
     border-radius: 5px;
@@ -119,10 +115,9 @@ nav ul {
 }
 
 .menu-toggle:hover {
-    transform: scale(1.1); /* Efek zoom saat tombol di-hover */
+    transform: scale(1.1); 
 }
 
-/* Styling navigasi */
 .nav-link {
     display: block;
     padding: 1em;
@@ -132,7 +127,7 @@ nav ul {
 }
 
 .nav-link:hover {
-    color: #ffffff; /* Perubahan warna saat di-hover */
+    color: #ffffff; 
 }
 
 .welcome-panel {

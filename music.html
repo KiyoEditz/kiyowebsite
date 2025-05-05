@@ -18,7 +18,28 @@
             <button id="startButton">Mulai Mendengarkan</button>
         </div>
     </div>
+    <aside class="sidebar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Profile</a></li>
+                <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                <li><a href="music.html" class="nav-link">Music</a></li>
+                <li><a href="talent.html" class="nav-link">Talent</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>   
+            </ul>
+        </nav>
+    </aside>
+    <script>
+        // Pilih elemen yang diperlukan
+        const sidebar = document.querySelector('.sidebar');
+        const toggleButton = document.getElementById('menu-toggle');
     
+        // Tambahkan event listener ke tombol toggle
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('active'); // Tambahkan/hapus kelas 'active'
+        });
+    </script>
     <div class="player-container">
         <h1 id="playlistTitle" class="playlist-title">Playlist</h1>
         

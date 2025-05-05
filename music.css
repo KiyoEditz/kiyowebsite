@@ -31,6 +31,110 @@ body {
     transform: scale(1.1);
 }
 
+ /* Sidebar */
+ .sidebar {
+    grid-area: sidebar;
+    background: #1c64e3;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-link {
+    display: block;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #a3c4f3;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    border: 2px solid #a3c4f3;
+    background: rgba(163, 196, 243, 0.2);
+    border-radius: 10px;
+}
+
+.sidebar nav li {
+    margin: 20px 0;
+}
+
+.sidebar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.sidebar nav a:hover {
+    color: #a8d0ff;
+}
+
+/* Styling dasar sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar tersembunyi di sebelah kiri */
+    width: 250px;
+    height: 100%;
+    background-color: #1b253b; /* Warna latar belakang sidebar */
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Transisi saat sidebar muncul */
+    z-index: 1000;
+}
+
+/* Saat sidebar aktif (ditampilkan) */
+.sidebar.active {
+    left: 0;
+}
+
+/* Styling tombol menu */
+.menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: -40px; /* Tombol berada di luar sidebar */
+    width: 40px;
+    height: 40px;
+    background-color: #567bfb; /* Warna tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1); /* Efek zoom saat tombol di-hover */
+}
+
+/* Styling navigasi */
+.nav-link {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #dbe7f5;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff; /* Perubahan warna saat di-hover */
+}
+
 .welcome-panel {
     position: fixed;
     top: 0;
@@ -330,108 +434,5 @@ body {
         font-size: 22px;
         margin: 15px 0;
     }
-    /* Sidebar */
-.sidebar {
-    grid-area: sidebar;
-    background: #1c64e3;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-}
-
-.nav-link {
-    display: block;
-    padding: 1rem 2rem;
-    margin: 1rem 0;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #a3c4f3;
-    border: 2px solid transparent;
-    transition: 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #ffffff;
-    border: 2px solid #a3c4f3;
-    background: rgba(163, 196, 243, 0.2);
-    border-radius: 10px;
-}
-
-.sidebar nav li {
-    margin: 20px 0;
-}
-
-.sidebar nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.sidebar nav a:hover {
-    color: #a8d0ff;
-}
-
-/* Styling dasar sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Sidebar tersembunyi di sebelah kiri */
-    width: 250px;
-    height: 100%;
-    background-color: #1b253b; /* Warna latar belakang sidebar */
-    color: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease; /* Transisi saat sidebar muncul */
-    z-index: 1000;
-}
-
-/* Saat sidebar aktif (ditampilkan) */
-.sidebar.active {
-    left: 0;
-}
-
-/* Styling tombol menu */
-.menu-toggle {
-    position: absolute;
-    top: 20px;
-    right: -40px; /* Tombol berada di luar sidebar */
-    width: 40px;
-    height: 40px;
-    background-color: #567bfb; /* Warna tombol */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    transition: transform 0.3s ease;
-}
-
-.menu-toggle:hover {
-    transform: scale(1.1); /* Efek zoom saat tombol di-hover */
-}
-
-/* Styling navigasi */
-.nav-link {
-    display: block;
-    padding: 1em;
-    text-decoration: none;
-    color: #dbe7f5;
-    transition: color 0.2s ease;
-}
-
-.nav-link:hover {
-    color: #ffffff; /* Perubahan warna saat di-hover */
-}
-
+   
 }

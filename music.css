@@ -312,7 +312,8 @@ body {
         padding: 30px;
         background: linear-gradient(60deg,rgba(120, 173, 253, 1) 0%, rgba(254, 254, 254, 1) 50%, rgba(253, 229, 253, 1) 100%);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        
+    }
+    
     .lyrics-container h3 {
         font-size: 16px;
         margin-bottom: 15px;

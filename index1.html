@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="thumbnail.jpg?v=2" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="style1.css">
+    <title>KiyoEditz</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index1.html" class="nav-link">Profile</a></li>
+                    <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+                    <li><a href="music.html" class="nav-link">Music</a></li>
+                    <li><a href="talent.html" class="nav-link">Talent</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>   
+                </ul>
+            </nav>
+        </aside>
+        <script>
+            // Pilih elemen yang diperlukan
+            const sidebar = document.querySelector('.sidebar');
+            const toggleButton = document.getElementById('menu-toggle');
+        
+            // Tambahkan event listener ke tombol toggle
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('active'); // Tambahkan/hapus kelas 'active'
+            });
+        </script>
+        <!-- Main Content -->
+        <main class="content">
+            <section class="hero">
+                <img src="thumbnail.jpg" alt="ABI Gaming Logo">
+                <div class="hero-content">
+                    <h1>KiyoEditz</h1>
+                    <h2>Programer Pemula</h2>
+                    <p><span id="typing-text"></span></p>
+                    <p><span id="typing-text2"></span></p>
+                    <script>
+                        const text = "Terus lah merasa haus akan ilmu pengetahuan, karena ilmu pengetahuan lebih bermanfaat dari gengsi dan nafsu mu.";
+                        const text2 = "\"Ketika saya menulis kode ini, hanya Tuhan dan saya yang mengerti apa yang saya lakukan. Sekarang hanya Tuhan yang tahu.\"";
+                        const typingSpeed = 50; // Kecepatan mengetik (ms per karakter)
+                
+                        let index1 = 0; // Untuk teks pertama
+                        let index2 = 0; // Untuk teks kedua
+                
+                        function typeEffect1() {
+                            const typingElement = document.getElementById("typing-text");
+                            if (index1 < text.length) {
+                                typingElement.textContent += text.charAt(index1);
+                                index1++;
+                                setTimeout(typeEffect1, typingSpeed);
+                            } else {
+                                // Mulai mengetik teks kedua setelah teks pertama selesai
+                                typeEffect2();
+                            }
+                        }
+                
+                        function typeEffect2() {
+                            const typingElement = document.getElementById("typing-text2");
+                            if (index2 < text2.length) {
+                                typingElement.textContent += text2.charAt(index2);
+                                index2++;
+                                setTimeout(typeEffect2, typingSpeed);
+                            }
+                        }
+                
+                        document.addEventListener("DOMContentLoaded", () => {
+                            typeEffect1(); // Mulai efek mengetik
+                        });
+                    </script>
+                    <a href="https://youtube.com/@kiyo_editz?si=ZFzdmehe8snTEIBn" class="action-btn">Subscribe Saya</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <ul>
+                <li><a href="https://www.instagram.com/kiyoeditz"><img src="instagram.png" alt="Instagram"><span>Instagram</span></a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100077102250480&mibextid=ZbWKwL"><img src="facebook.png" alt="Facebook"><span>Facebook</span></a></li>
+                <li><a href="https://discord.com/users/813365850979041302"><img src="discord.png" alt="Discord"><span>Discord</span></a></li>
+                <li><a href="https://youtube.com/@kiyo_editz?si=ZFzdmehe8snTEIBn"><img src="youtube.png" alt="YouTube"><span>YouTube</span></a></li>
+            </ul>
+            <p>© 2025 KiyoTech.Corp. All Rights Reserved.</p>
+        </footer>
+    </div>
+    <script>
+    // Fungsi ini berjalan saat halaman selesai dimuat
+    window.onload = function() {
+        // Mengambil parameter dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Memeriksa apakah parameter 'prank' ada di URL
+        if (urlParams.has('prank')) {
+            // Jika ada, tampilkan leluconnya!
+            alert('no, you have to stay here lol.');
+            
+            // (Opsional tapi direkomendasikan) Membersihkan URL 
+            // agar alert tidak muncul lagi jika user me-refresh halaman.
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    };
+</script>
+</body>
+</html>

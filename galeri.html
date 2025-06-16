@@ -36,43 +36,103 @@
         
         <!-- Main Content -->
         <main class="content">
-            <section class="here">
-                <div class="carousel">
-                    <button class="carousel-btn prev">‹</button>
-                    <div class="carousel-container">
-                        <div class="carousel-track">
-                            <img src="112567330_p0_master1200.jpg" alt="Foto 1" class="carousel-image">
-                            <img src="117817334_p0.png" alt="Foto 2" class="carousel-image">
-                            <img src="SaveTwitter.Net_GWdaryUbUAAmdAN.jpg" alt="Foto 3" class="carousel-image">
-                            <img src="1cf07134674f4f54c3883.jpg" alt="Foto 4" class="carousel-image">
-                        </div>
+            <!-- GANTI SELURUH BAGIAN INI DI galeri.html -->
+<section class="here">
+    <div class="carousel">
+        <button class="carousel-btn prev">‹</button>
+        <div class="carousel-container">
+            <div class="carousel-track">
+
+                <!-- Slide 1 -->
+                <div class="carousel-slide">
+                    <img src="112567330_p0_master1200.jpg" alt="Foto 1" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h3>Judul Gambar Pertama</h3>
+                        <p>Ini adalah deskripsi singkat untuk gambar pertama. Anda bisa menambahkan detail di sini.</p>
                     </div>
-                    <button class="carousel-btn next">›</button>
                 </div>
-                <script> 
-                    const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-const images = Array.from(track.children);
-const imageWidth = images[0].getBoundingClientRect().width;
 
-let currentIndex = 0;
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <img src="117817334_p0.png" alt="Foto 2" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h3>Judul Gambar Kedua</h3>
+                        <p>Deskripsi untuk gambar kedua, mungkin dengan cerita yang berbeda.</p>
+                    </div>
+                </div>
 
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < images.length - 1) {
-        currentIndex++;
-        track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    }
-});
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <img src="SaveTwitter.Net_GWdaryUbUAAmdAN.jpg" alt="Foto 3" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h3>Judul Gambar Ketiga</h3>
+                        <p>Teks unik untuk gambar yang ketiga.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <img src="1cf07134674f4f54c3883.jpg" alt="Foto 4" class="carousel-image">
+                    <div class="carousel-caption">
+                        <h3>Judul Gambar Keempat</h3>
+                        <p>Dan ini adalah deskripsi terakhir.</p>
+                    </div>
+                </div>
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        track.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-    }
-});
-                </script>
-            </section>
+            </div>
+        </div>
+        <button class="carousel-btn next">›</button>
+    </div>
+<script> 
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const slides = Array.from(track.children);
+    
+    // Gunakan let agar nilainya bisa di-update
+    let slideWidth = slides[0].getBoundingClientRect().width;
+    let currentIndex = 0;
+
+    // Fungsi untuk mengatur ulang posisi dan transisi
+    const updateCarouselDimensions = () => {
+        // Matikan transisi sementara agar tidak terlihat aneh saat resize
+        track.style.transition = 'none';
+        
+        // Hitung ulang lebar slide
+        slideWidth = slides[0].getBoundingClientRect().width;
+        
+        // Atur ulang posisi track sesuai dengan slide saat ini
+        track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+
+        // Aktifkan kembali transisi setelah jeda singkat
+        setTimeout(() => {
+            track.style.transition = 'transform 0.3s ease-in-out';
+        }, 50);
+    };
+
+    // Panggil sekali saat pertama kali dimuat
+    updateCarouselDimensions();
+
+    // Tambahkan event listener untuk window resize
+    window.addEventListener('resize', updateCarouselDimensions);
+
+    // Event listener untuk tombol next
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+        }
+    });
+
+    // Event listener untuk tombol prev
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+        }
+    });
+</script>
+</section>
             
         </main>
 
